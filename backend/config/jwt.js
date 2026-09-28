@@ -1,0 +1,5 @@
+const JWT_SECRET = "MAIL_SYSTEM_SECRET_2026_FIXED_9X7K2P";
+
+module.exports = {
+  JWT_SECRET,
+};

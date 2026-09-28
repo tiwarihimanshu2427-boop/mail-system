@@ -1,0 +1,776 @@
+/* =========================================================
+   MAILSYSTEM - PREMIUM REGISTER PAGE
+========================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.register-page {
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 35px 25px;
+
+  background:
+    radial-gradient(
+      circle at 5% 15%,
+      rgba(124, 58, 237, 0.15),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 95% 85%,
+      rgba(249, 115, 22, 0.14),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #f7f8ff 0%,
+      #f3f5fb 50%,
+      #fff8f3 100%
+    );
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+}
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.register-card {
+  width: 100%;
+  max-width: 1080px;
+
+  min-height: 650px;
+
+  display: grid;
+  grid-template-columns: 44% 56%;
+
+  overflow: hidden;
+
+  position: relative;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  border-radius: 28px;
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+
+  box-shadow:
+    0 35px 90px rgba(15, 23, 42, 0.14),
+    0 10px 35px rgba(109, 40, 217, 0.08);
+
+  border-top: 3px solid transparent;
+
+  border-image:
+    linear-gradient(
+      90deg,
+      #6d28d9,
+      #9333ea,
+      #f97316
+    ) 1;
+}
+
+/* =========================================================
+   LEFT PANEL
+========================================================= */
+
+.register-left {
+  position: relative;
+
+  padding: 52px 45px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 85% 8%,
+      rgba(139, 92, 246, 0.20),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 10% 90%,
+      rgba(167, 139, 250, 0.18),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      #ffffff 0%,
+      #f1f3ff 100%
+    );
+
+  border-right: 1px solid rgba(124, 58, 237, 0.08);
+}
+
+/* decorative circles */
+
+.register-left::before {
+  content: "";
+
+  position: absolute;
+
+  width: 190px;
+  height: 190px;
+
+  right: -85px;
+  top: -75px;
+
+  border-radius: 50%;
+
+  background: rgba(139, 92, 246, 0.10);
+
+  filter: blur(2px);
+}
+
+.register-left::after {
+  content: "";
+
+  position: absolute;
+
+  width: 100px;
+  height: 100px;
+
+  left: -45px;
+  bottom: 65px;
+
+  border-radius: 50%;
+
+  background: rgba(124, 58, 237, 0.08);
+}
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.register-brand {
+  position: relative;
+  z-index: 2;
+
+  font-size: 23px;
+
+  font-weight: 900;
+
+  letter-spacing: -0.7px;
+
+  color: #6d28d9;
+}
+
+.register-brand span {
+  color: #f97316;
+}
+
+.brand-line {
+  width: 42px;
+  height: 4px;
+
+  margin-top: 13px;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #6d28d9,
+      #9333ea,
+      #f97316
+    );
+}
+
+/* =========================================================
+   LEFT TEXT
+========================================================= */
+
+.register-left h1 {
+  position: relative;
+  z-index: 2;
+
+  margin-top: 28px;
+
+  color: #111827;
+
+  font-size: 31px;
+
+  line-height: 1.15;
+
+  font-weight: 900;
+
+  letter-spacing: -1px;
+}
+
+.register-description {
+  position: relative;
+  z-index: 2;
+
+  max-width: 290px;
+
+  margin-top: 10px;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  line-height: 1.65;
+}
+
+/* =========================================================
+   MAIL ILLUSTRATION
+========================================================= */
+
+.mail-illustration {
+  position: relative;
+
+  width: 230px;
+  height: 170px;
+
+  margin: 45px auto 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 2;
+}
+
+.mail-glow {
+  position: absolute;
+
+  width: 175px;
+  height: 125px;
+
+  border-radius: 35%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(139, 92, 246, 0.25),
+      transparent 70%
+    );
+
+  filter: blur(8px);
+}
+
+.mail-icon {
+  position: relative;
+
+  width: 145px;
+  height: 105px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #a78bfa,
+      #7c3aed
+    );
+
+  color: white;
+
+  font-size: 62px;
+
+  transform: rotate(-7deg);
+
+  box-shadow:
+    0 25px 50px
+    rgba(109, 40, 217, 0.28);
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.45);
+}
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.register-features {
+  position: relative;
+  z-index: 3;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 12px;
+
+  margin-top: 10px;
+}
+
+.feature {
+  text-align: center;
+
+  color: #475569;
+}
+
+.feature-icon {
+  width: 38px;
+  height: 38px;
+
+  margin: 0 auto 7px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ede9fe;
+
+  font-size: 17px;
+}
+
+.feature-icon.orange {
+  background: #ffedd5;
+}
+
+.feature-icon.green {
+  background: #d1fae5;
+}
+
+.feature strong {
+  display: block;
+
+  color: #334155;
+
+  font-size: 10px;
+
+  font-weight: 800;
+}
+
+.feature span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+}
+
+/* =========================================================
+   RIGHT PANEL
+========================================================= */
+
+.register-right {
+  padding: 54px 62px 42px;
+
+  background: rgba(255, 255, 255, 0.98);
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.register-header h2 {
+  color: #111827;
+
+  font-size: 25px;
+
+  line-height: 1.2;
+
+  font-weight: 900;
+
+  letter-spacing: -0.7px;
+}
+
+.register-header p {
+  margin-top: 8px;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.register-form {
+  margin-top: 28px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+.register-group {
+  width: 100%;
+}
+
+.register-group label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #172033;
+
+  font-size: 11px;
+
+  font-weight: 800;
+}
+
+.register-group input {
+  width: 100%;
+
+  height: 46px;
+
+  padding: 0 14px;
+
+  border: 1px solid #dbe1ea;
+
+  border-radius: 10px;
+
+  outline: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #fafbff
+    );
+
+  color: #1e293b;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.register-group input::placeholder {
+  color: #94a3b8;
+}
+
+.register-group input:hover {
+  border-color: #c4b5fd;
+}
+
+.register-group input:focus {
+  border-color: #8b5cf6;
+
+  background: white;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(124, 58, 237, 0.10);
+}
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.register-error {
+  padding: 10px 12px;
+
+  border-radius: 9px;
+
+  background: #fef2f2;
+
+  border: 1px solid #fecaca;
+
+  color: #b91c1c;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+/* =========================================================
+   SUCCESS
+========================================================= */
+
+.register-success {
+  padding: 10px 12px;
+
+  border-radius: 9px;
+
+  background: #f0fdf4;
+
+  border: 1px solid #bbf7d0;
+
+  color: #15803d;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.register-submit {
+  width: 100%;
+
+  height: 48px;
+
+  margin-top: 4px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #6d28d9,
+      #9333ea
+    );
+
+  color: white;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 28px
+    rgba(109, 40, 217, 0.25);
+
+  transition: all 0.2s ease;
+}
+
+.register-submit:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 17px 34px
+    rgba(109, 40, 217, 0.32);
+}
+
+.register-submit:active {
+  transform: translateY(0);
+}
+
+.register-submit:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.register-footer {
+  margin-top: auto;
+
+  padding-top: 24px;
+
+  text-align: center;
+
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+.register-footer button {
+  margin-left: 5px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #7c3aed;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.register-footer button:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .register-page {
+    padding: 20px;
+  }
+
+  .register-card {
+    max-width: 650px;
+
+    grid-template-columns: 1fr;
+  }
+
+  .register-left {
+    padding: 35px;
+
+    min-height: 310px;
+
+    border-right: none;
+
+    border-bottom: 1px solid
+      rgba(124, 58, 237, 0.08);
+  }
+
+  .register-left h1 {
+    font-size: 28px;
+  }
+
+  .mail-illustration {
+    position: absolute;
+
+    right: 50px;
+    top: 85px;
+
+    margin: 0;
+
+    transform: scale(0.75);
+  }
+
+  .register-features {
+    max-width: 390px;
+  }
+
+  .register-right {
+    padding: 40px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .register-page {
+    padding: 12px;
+  }
+
+  .register-card {
+    border-radius: 20px;
+  }
+
+  .register-left {
+    padding: 28px 25px;
+
+    min-height: 270px;
+  }
+
+  .register-brand {
+    font-size: 21px;
+  }
+
+  .register-left h1 {
+    margin-top: 22px;
+
+    font-size: 25px;
+  }
+
+  .register-description {
+    font-size: 13px;
+  }
+
+  .mail-illustration {
+    position: relative;
+
+    right: auto;
+    top: auto;
+
+    width: 170px;
+    height: 105px;
+
+    margin: 20px auto;
+  }
+
+  .mail-icon {
+    width: 105px;
+    height: 75px;
+
+    font-size: 45px;
+  }
+
+  .register-features {
+    gap: 5px;
+  }
+
+  .register-right {
+    padding: 30px 22px;
+  }
+
+  .register-header h2 {
+    font-size: 22px;
+  }
+
+  .register-form {
+    margin-top: 22px;
+
+    gap: 12px;
+  }
+
+  .register-group input {
+    height: 45px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL SCREEN
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .register-features {
+    grid-template-columns: 1fr;
+  }
+
+  .feature {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    text-align: left;
+  }
+
+  .feature-icon {
+    margin: 0;
+  }
+
+  .register-right {
+    padding: 25px 18px;
+  }
+}

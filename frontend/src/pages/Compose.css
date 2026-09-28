@@ -1,0 +1,604 @@
+/* =========================================================
+   PREMIUM COMPOSE PAGE - FIXED
+========================================================= */
+
+.compose-card {
+  width: min(820px, 100%);
+  margin: 20px auto 60px;
+
+  padding: 40px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(250, 249, 255, 0.97)
+    );
+
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+
+  box-shadow:
+    0 25px 70px rgba(15, 23, 42, 0.10),
+    0 8px 25px rgba(109, 40, 217, 0.05);
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top purple glow */
+.compose-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  top: -190px;
+  right: -100px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(139, 92, 246, 0.16),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+/* Bottom orange glow */
+.compose-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  bottom: -150px;
+  left: -100px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(249, 115, 22, 0.09),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.compose-card h1 {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+
+  margin: 0 0 10px;
+
+  font-size: 32px;
+
+  font-weight: 850;
+
+  letter-spacing: -1px;
+
+  color: #111827;
+}
+
+.compose-card h1::before {
+  content: "✉";
+
+  width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 14px;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #6d28d9,
+      #9333ea
+    );
+
+  color: white;
+
+  font-size: 21px;
+
+  box-shadow:
+    0 10px 25px
+    rgba(109, 40, 217, 0.25);
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.compose-form {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 22px;
+
+  margin-top: 28px;
+}
+
+
+/* =========================================================
+   LABEL FIX
+========================================================= */
+
+.compose-form label {
+  display: block;
+
+  margin: 0 0 8px;
+
+  font-size: 13px;
+
+  line-height: 1.4;
+
+  font-weight: 800;
+
+  color: #374151;
+}
+
+
+/* =========================================================
+   INPUT / SELECT / TEXTAREA
+========================================================= */
+
+.compose-form input,
+.compose-form select,
+.compose-form textarea {
+  display: block;
+
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border: 1px solid #dfe3eb;
+
+  border-radius: 12px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #1f2937;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.compose-form input:hover,
+.compose-form select:hover,
+.compose-form textarea:hover {
+  border-color: #c4b5fd;
+}
+
+.compose-form input:focus,
+.compose-form select:focus,
+.compose-form textarea:focus {
+  border-color: #7c3aed;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(124, 58, 237, 0.10);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.compose-form select {
+  min-height: 51px;
+
+  cursor: pointer;
+
+  appearance: none;
+
+  padding-right: 45px;
+
+  background-color: white;
+
+  background-image:
+    linear-gradient(
+      45deg,
+      transparent 50%,
+      #7c3aed 50%
+    ),
+    linear-gradient(
+      135deg,
+      #7c3aed 50%,
+      transparent 50%
+    );
+
+  background-position:
+    calc(100% - 20px) 50%,
+    calc(100% - 14px) 50%;
+
+  background-size:
+    6px 6px,
+    6px 6px;
+
+  background-repeat: no-repeat;
+}
+
+
+/* =========================================================
+   SUBJECT
+========================================================= */
+
+.compose-form input[type="text"] {
+  min-height: 51px;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.compose-form textarea {
+  min-height: 190px;
+
+  resize: vertical;
+
+  line-height: 1.7;
+
+  padding: 16px;
+}
+
+.compose-form textarea::placeholder,
+.compose-form input::placeholder {
+  color: #a1a1aa;
+}
+
+
+/* =========================================================
+   ATTACHMENT BOX
+========================================================= */
+
+.attachment-input-box {
+  position: relative;
+
+  padding: 21px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #faf9ff,
+      #f8fafc
+    );
+
+  border:
+    1px dashed
+    #a78bfa;
+
+  border-radius: 15px;
+
+  transition: 0.25s ease;
+}
+
+.attachment-input-box:hover {
+  border-color: #7c3aed;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8f5ff,
+      #fafafa
+    );
+
+  box-shadow:
+    0 8px 25px
+    rgba(109, 40, 217, 0.07);
+}
+
+.attachment-input-box label {
+  display: block;
+
+  margin: 0 0 11px;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  color: #374151;
+}
+
+
+/* =========================================================
+   FILE INPUT
+========================================================= */
+
+.attachment-input-box input[type="file"] {
+  width: 100%;
+
+  min-height: 52px;
+
+  padding: 8px;
+
+  border:
+    1px solid
+    #e5e7eb;
+
+  border-radius: 10px;
+
+  background: white;
+
+  cursor: pointer;
+
+  font-size: 13px;
+}
+
+.attachment-input-box input[type="file"]::file-selector-button {
+  border: none;
+
+  padding: 10px 16px;
+
+  margin-right: 10px;
+
+  border-radius: 8px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #6d28d9,
+      #9333ea
+    );
+
+  color: white;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.attachment-input-box input[type="file"]::file-selector-button:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #5b21b6,
+      #7e22ce
+    );
+}
+
+
+/* =========================================================
+   HELP TEXT
+========================================================= */
+
+.file-help {
+  display: block;
+
+  margin: 9px 0 0;
+
+  color: #6b7280;
+
+  font-size: 11px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   SELECTED FILES
+========================================================= */
+
+.selected-files {
+  margin-top: 13px;
+
+  padding: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f5f3ff,
+      #faf5ff
+    );
+
+  border:
+    1px solid
+    #ddd6fe;
+
+  border-radius: 11px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+
+  color: #4c1d95;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   SEND BUTTON
+========================================================= */
+
+.compose-card .primary-btn {
+  width: 100%;
+
+  min-height: 50px;
+
+  margin-top: 2px;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #6d28d9,
+      #9333ea
+    );
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  box-shadow:
+    0 10px 25px
+    rgba(109, 40, 217, 0.22);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.compose-card .primary-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 15px 32px
+    rgba(109, 40, 217, 0.30);
+}
+
+
+/* =========================================================
+   SUCCESS / ERROR
+========================================================= */
+
+.success-message {
+  padding: 12px 15px;
+
+  margin-top: 5px;
+
+  border-radius: 10px;
+
+  background: #f0fdf4;
+
+  border: 1px solid #bbf7d0;
+
+  color: #166534;
+
+  font-size: 13px;
+
+  font-weight: 650;
+}
+
+.error-message {
+  padding: 12px 15px;
+
+  margin-top: 5px;
+
+  border-radius: 10px;
+
+  background: #fef2f2;
+
+  border: 1px solid #fecaca;
+
+  color: #991b1b;
+
+  font-size: 13px;
+
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .compose-card {
+    width: 94%;
+
+    padding: 28px 21px;
+
+    border-radius: 19px;
+  }
+
+  .compose-card h1 {
+    font-size: 27px;
+  }
+
+  .compose-card h1::before {
+    width: 43px;
+    height: 43px;
+
+    font-size: 18px;
+
+    margin-right: 10px;
+  }
+
+  .compose-form {
+    gap: 19px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .compose-card {
+    width: 94%;
+
+    padding: 23px 17px;
+  }
+
+  .compose-card h1 {
+    font-size: 23px;
+  }
+
+  .compose-card h1::before {
+    width: 38px;
+    height: 38px;
+
+    font-size: 16px;
+  }
+
+  .compose-form input,
+  .compose-form select,
+  .compose-form textarea {
+    padding: 13px;
+
+    font-size: 13px;
+  }
+
+  .compose-form textarea {
+    min-height: 160px;
+  }
+
+  .attachment-input-box {
+    padding: 16px;
+  }
+}
