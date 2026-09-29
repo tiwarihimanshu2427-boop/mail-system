@@ -44,13 +44,22 @@ app.use(express.json());
 // DATABASE
 // =====================================================
 
-const pool = new Pool({
-  host: process.env.DB_HOST || "127.0.0.1",
-  port: Number(process.env.DB_PORT || 6000),
-  database: process.env.DB_NAME || "mail_system",
-  user: process.env.DB_USER || "postgres",
-  password: process.env.DB_PASSWORD,
-});
+const poolConfig = process.env.DATABASE_URL
+  ? {
+      connectionString: process.env.DATABASE_URL,
+      ssl: {
+        rejectUnauthorized: false,
+      },
+    }
+  : {
+      host: process.env.DB_HOST || "127.0.0.1",
+      port: Number(process.env.DB_PORT || 6000),
+      database: process.env.DB_NAME || "mail_system",
+      user: process.env.DB_USER || "postgres",
+      password: process.env.DB_PASSWORD,
+    };
+
+const pool = new Pool(poolConfig);
 
 
 // =====================================================
@@ -265,6 +274,12 @@ app.get("/", (req, res) => {
     message:
       "Mail System Backend is running",
   });
+  app.get("/api/health", (req, res) => {
+  res.json({
+    success: true,
+    message: "Mail System API is healthy"
+  });
+});
 
 });
 
